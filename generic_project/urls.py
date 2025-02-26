@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from generic_app import views as v1
 from form_app import views as v2
+from createview_app import views as v3
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/',v1.StudentListView.as_view(),name='student'),
@@ -26,4 +27,6 @@ urlpatterns = [
     path('student1/<int:pk>',v1.StudentDView.as_view(),name='studentdetail'),
     path('contact/',v2.ContactFormView.as_view(),name='contact'),
     path('thankyou/',v2.ThanksTemplateView.as_view(),name='thankyou'),
+    path('create/',v3.StudentCreateView.as_view(),name='stucreate'),
+    path('thanks/',v3.ThanksTemplateView.as_view(),name='thankyou1'),
 ]

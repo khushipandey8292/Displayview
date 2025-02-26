@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'generic_app',
     'form_app',
+    'createview_app',
 ]
 
 MIDDLEWARE = [
