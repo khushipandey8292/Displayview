@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'generic_app',
     'form_app',
     'createview_app',
+    'update_view',
+    'delete_view',
 ]
 
 MIDDLEWARE = [

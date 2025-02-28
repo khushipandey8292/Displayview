@@ -19,6 +19,9 @@ from django.urls import path
 from generic_app import views as v1
 from form_app import views as v2
 from createview_app import views as v3
+from update_view import views as v4
+from delete_view import views as v5
+from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/',v1.StudentListView.as_view(),name='student'),
@@ -29,4 +32,10 @@ urlpatterns = [
     path('thankyou/',v2.ThanksTemplateView.as_view(),name='thankyou'),
     path('create/',v3.StudentCreateView.as_view(),name='stucreate'),
     path('thanks/',v3.ThanksTemplateView.as_view(),name='thankyou1'),
+    path('cre/',v4.StudentCreateView.as_view(),name='st'),
+    path('updates/',v4.ThanksTemplateView.as_view(),name='up'),
+    path('updates/<int:pk>',v4.StudentUpdateView.as_view(),name='st'),
+    path('updateform/',v4.ThanksUpdateTemplateView.as_view(),name='updatedata'),
+    path('del/<int:pk>',v5.StudentDeleteView.as_view(),name='stdel'),
+    path('success/',TemplateView.as_view(template_name='delete_view/success.html'),name='success')
 ]
